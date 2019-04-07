@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <!-- Head -->
+    <head>
+      <title>Appalogue</title>
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
+
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+
+    <!-- Body -->
+    <body>
+
+      <!-- Header: Includes logo and navigation elements -->
+      <header>
+        <div class="main-header">
+          <!-- Logo -->
+          <img src="img/icon.png" id="icon" alt="icon">
+              <!-- <img src="img/name-light.png" id="name" alt="icon"> : Alternate Logo -->
+          
+          <!-- Log In -->
+          <button type="button" id="login">Log In</button>
+
+          <!-- Search Bar : Desktop -->
+          <span class="search-desktop">
+            <input type="text" placeholder="Search...">
+            <button type="submit" id="search-desktop"><i class="fa fa-search"></i></button>
+          </span>
+        </div>
+        
+        <div class="sub-header">
+          <!-- Search Bar : Mobile -->
+          <div class="search-mobile">
+            <input type="text" placeholder="Search...">
+            <button type="submit" id="search-mobile"><i class="fa fa-search"></i></button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <section>
+        <%= yield %>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <p id="copyright">© 2019 by Math.Random(Name) Inc. All rights reserved.</p>
+      </footer>
+    </body>
+</html>
