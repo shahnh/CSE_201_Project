@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<% @apps.each do |app| %>
+	<div class="column">
+		<div class="app">
+			<h1><%= app.name %></h1>
+			<img src="" alt="<%= app.name %> Logo">
+			<h3><%= app.price %></h3>
+			<p><%= app.description %></p>
+        	<p><%= link_to 'Show', app %></p>
+        	<p><%= link_to 'Edit', edit_app_path(app) %></p>
+        	<p><%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    	</div>
+  	</div>
+<% end %>
+
+<%= link_to 'New App', new_app_path %>
+
+<!-- Obsolete Code -->
+<!-- <table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Version</th>
+      <th>Orgname</th>
+      <th>Price</th>
+      <th>Platform</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @apps.each do |app| %>
+      <tr>
+        <td><%= app.name %></td>
+        <td><%= app.description %></td>
+        <td><%= app.version %></td>
+        <td><%= app.orgName %></td>
+        <td><%= app.price %></td>
+        <td><%= app.platform %></td>
+        <td><%= link_to 'Show', app %></td>
+        <td><%= link_to 'Edit', edit_app_path(app) %></td>
+        <td><%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table> -->
