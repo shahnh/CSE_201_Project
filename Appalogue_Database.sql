@@ -14,7 +14,7 @@ GO
 
 /****** Object:  Table Apps  ******/   
 CREATE TABLE Apps(
-	appName varchar(20) IDENTITY NOT NULL,
+	appName varchar(20) PRIMARY KEY NOT NULL,
 	descp varchar(300) NOT NULL,
 	orgName varchar(30) NOT NULL,
 	platform varchar(10) NOT NUll,
