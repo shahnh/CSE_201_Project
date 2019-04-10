@@ -170,9 +170,15 @@ footer {
 }
 
 /* === Media Queries === */ /* ================================================================================================*/
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1200px) {
 	.column {
 		width: 33.33%;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	.column {
+		width: 50%;
 	}
 }
 
@@ -188,19 +194,17 @@ footer {
 		border-radius: 10px 0px 0px 10px;
 		width: 100px;
 	}
-	
+}
+
+@media only screen and (max-width: 500px) {
 	.column {
-		width: 50%;
+		width: 100%;
 	}
 }
 
 @media only screen and (max-width: 450px) {
 	.search-desktop {
 		display: none;
-	}
-	
-	.column {
-		width: 100%;
 	}
 	
 	.search-mobile {
