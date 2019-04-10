@@ -7,9 +7,9 @@
 			<img src="" alt="<%= app.name %> Logo">
 			<h3><%= app.price %></h3>
 			<p><%= app.description %></p>
-        	<p><%= link_to 'Show', app %></p>
-        	<p><%= link_to 'Edit', edit_app_path(app) %></p>
-        	<p><%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        	<p><%= link_to '<button type="button">Show</button>'.html_safe, app %></p>
+        	<p><%= link_to '<button type="button">Edit</button>'.html_safe, edit_app_path(app) %></p>
+        	<p><%= link_to '<button type="button">Destroy</button>'.html_safe, app, method: :delete, data: { confirm: 'Are you sure?' } %></p>
     	</div>
   	</div>
 <% end %>
