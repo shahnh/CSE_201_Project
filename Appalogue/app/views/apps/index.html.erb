@@ -8,7 +8,8 @@
 	<div class="column">
 		<div style="text-align: center;" class="app">
 			<h1><%= app.name %></h1>
-			<img src="" alt="<%= app.name %> Logo">
+      <%= image_tag(app.image, alt:"app.name Logo", class: "appImage") if app.image.attached? %>
+			<!-- <img src="" alt=> -->
 			<h3><%= app.price %></h3>
 			<p><%= app.description %></p>
         	<p><%= link_to '<button type="button">Show</button>'.html_safe, app %></p>
