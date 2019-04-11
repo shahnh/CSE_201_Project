@@ -142,19 +142,34 @@ footer {
 	height: 350px;
 	border-radius: 10px;
 	display: block;
-	padding: 10px;
+	padding: 1px;
 	
 	/* Font */
 	
 }
 
-.search-mobile {
-	display: none;
+.infoButton {
+	/* Appearance */
+	width: 100px;
+	height: 40px;
+	border: none;
+	border-radius: 10px;
+	background-color: #007AA7;
+	color: #FFFFFF;
+
+	/* Font */
+	font-size: 15px;
+	font-weight: bold;
 }
 
 .appImage {
 	width: 50%;
+	height: width;
 	margin-top: -10px;
+}
+
+.search-mobile {
+	display: none;
 }
 
 .row {
