@@ -30,7 +30,7 @@
   <%= @app.platform %>
 </p>
 
-<%= @app.image %>
+<%= image_tag(@app.image, alt:"@app.name Logo", class: "appImage") if @app.image.attached? %>
 
 <%= link_to 'Edit', edit_app_path(@app) %> |
 <%= link_to 'Back', apps_path %>
