@@ -24,7 +24,13 @@
           <!-- <img src="img/name-light.png" id="name" alt="icon"> : Alternate Logo -->
 
           <!-- Log In -->
-          <button type="button" id="login">Log In</button>
+          <% if current_user %>
+              <%= link_to '<button type="button" id="login">Log Out</button>'.html_safe, destroy_user_session_path, method: :delete%>
+          <% else %>
+              <%= link_to '<button type="button" id="login">Log In</button>'.html_safe, new_user_session_path %>
+          <% end %>
+
+          <!-- <button type="button" id="login">Log In</button> -->
 
           <!-- Search Bar : Desktop -->
           <span class="search-desktop">
@@ -46,6 +52,8 @@
 
       <!-- Content -->
       <section>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
         <%= yield %>
       </section>
 
