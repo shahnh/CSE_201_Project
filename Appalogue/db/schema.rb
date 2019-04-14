@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 2019_04_14_195151) do
+=======
 ActiveRecord::Schema.define(version: 2019_04_14_203952) do
+>>>>>>> f25600bd106e7093fb7ea3147f7c06dd2fa999ec
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -32,6 +37,9 @@ ActiveRecord::Schema.define(version: 2019_04_14_203952) do
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
+=======
+ActiveRecord::Schema.define(version: 2019_04_13_185629) do
+>>>>>>> master
 
   create_table "apps", force: :cascade do |t|
     t.string "name"
@@ -44,6 +52,9 @@ ActiveRecord::Schema.define(version: 2019_04_14_203952) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
   create_table "comments", force: :cascade do |t|
     t.string "username"
     t.text "body"
@@ -53,6 +64,7 @@ ActiveRecord::Schema.define(version: 2019_04_14_203952) do
     t.index ["app_id"], name: "index_comments_on_app_id"
   end
 
+>>>>>>> f25600bd106e7093fb7ea3147f7c06dd2fa999ec
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -73,6 +85,15 @@ ActiveRecord::Schema.define(version: 2019_04_14_203952) do
     t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+=======
+  create_table "comments", force: :cascade do |t|
+    t.string "username"
+    t.text "body"
+    t.integer "app_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["app_id"], name: "index_comments_on_app_id"
+>>>>>>> master
   end
 
 end
