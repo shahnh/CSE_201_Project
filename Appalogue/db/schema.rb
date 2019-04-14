@@ -11,7 +11,11 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_04_14_195151) do
+=======
+ActiveRecord::Schema.define(version: 2019_04_14_203952) do
+>>>>>>> f25600bd106e7093fb7ea3147f7c06dd2fa999ec
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -49,6 +53,18 @@ ActiveRecord::Schema.define(version: 2019_04_13_185629) do
   end
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  create_table "comments", force: :cascade do |t|
+    t.string "username"
+    t.text "body"
+    t.integer "app_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["app_id"], name: "index_comments_on_app_id"
+  end
+
+>>>>>>> f25600bd106e7093fb7ea3147f7c06dd2fa999ec
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "body"
