@@ -1,7 +1,5 @@
- Rails.application.routes.draw do
-  resources :apps do
-  	resources :comments
-  end
+Rails.application.routes.draw do
+  resources :apps
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'apps#index'
 end
