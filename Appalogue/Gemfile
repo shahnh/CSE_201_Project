@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Devise for user authentication
 gem 'devise'
-gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
+gem 'bcrypt'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
