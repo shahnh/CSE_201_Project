@@ -5,6 +5,8 @@ class AppsController < ApplicationController
   # GET /apps.json
   def index
     @apps = App.all
+    @apps = App.where(["name LIKE ?","%#{params[:search]}%"])
+
   end
 
   # GET /apps/1
