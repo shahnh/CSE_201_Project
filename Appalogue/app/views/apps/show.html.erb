@@ -1,37 +1,41 @@
 <p id="notice"><%= notice %></p>
-<div class="app">
-<p>
-  <strong>Name:</strong>
-  <%= @app.name %>
-</p>
+<div class="column">
+  <div style="text-align: center;" class="app">
+    <p>
+      <strong>Name:</strong>
+      <%= @app.name %>
+    </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @app.description %>
-</p>
+    <p>
+      <strong>Description:</strong>
+      <%= @app.description %>
+    </p>
 
-<p>
-  <strong>Version:</strong>
-  <%= @app.version %>
-</p>
+    <p>
+      <strong>Version:</strong>
+      <%= @app.version %>
+    </p>
 
-<p>
-  <strong>Orgname:</strong>
-  <%= @app.orgName %>
-</p>
+    <p>
+      <strong>Orgname:</strong>
+      <%= @app.orgName %>
+    </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @app.price %>
-</p>
+    <p>
+      <strong>Price:</strong>
+      <%= @app.price %>
+    </p>
 
-<p>
-  <strong>Platform:</strong>
-  <%= @app.platform %>
-</p>
+    <p>
+      <strong>Platform:</strong>
+      <%= @app.platform %>
+    </p>
 
-<%= image_tag(@app.image, alt:"@app.name Logo", class: "appImage") if @app.image.attached? %>
-
-<%= link_to 'Edit', edit_app_path(@app) %> |
-<%= link_to 'Back', apps_path %>
+    <p>
+      <%= image_tag(@app.image, alt:"@app.name Logo", class: "appImage") if @app.image.attached? %>
+    </p>
+  </div>
+  <%= link_to 'Edit', edit_app_path(@app) %> |
+  <%= link_to 'Back', apps_path %>
 </div>
+
