@@ -4,9 +4,13 @@ class AppsController < ApplicationController
   # GET /apps
   # GET /apps.json
   def index
-    @apps = App.all
+    #@apps = App.all
+    #@apps = App.search(params[:search])
     @apps = App.where(["name LIKE ?","%#{params[:search]}%"])
-
+    @apps = App.where(["price LIKE ?","%#{params[:search]}%"])
+    @apps = App.where(["description LIKE ?","%#{params[:search]}%"])
+    @apps = App.where(["version LIKE ?","%#{params[:search]}%"])
+    @apps = App.where(["platform LIKE ?","%#{params[:search]}%"])
   end
 
   # GET /apps/1

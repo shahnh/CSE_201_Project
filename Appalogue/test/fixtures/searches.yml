@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  keywords: MyString
+  description: MyString
+  version: 9.99
+  orgname: MyString
+  price: MyString
+  platform: MyString
+
+two:
+  keywords: MyString
+  description: MyString
+  version: 9.99
+  orgname: MyString
+  price: MyString
+  platform: MyString

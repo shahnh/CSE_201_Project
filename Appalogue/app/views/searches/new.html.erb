@@ -1,0 +1,15 @@
+<h1>Advanced Search</h1>
+
+<% form_for @search, html: {class: "pure-form"} do |s| %>
+
+	<div class="field">
+		<% s.label :keywords %><br/>
+		<% s.text_field :keywords %>
+
+	</div>
+
+	<div class="actions"><%= s.submit "Search", class: "pure-buttom pure-button-primary"%></div>
+
+	<% end%>
+
+	<p><%= link_to 'Back', apps_path %></p>
