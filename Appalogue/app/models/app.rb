@@ -1,4 +1,5 @@
 class App < ApplicationRecord
+	has_many :comments
 	has_one_attached :image
 
 	def self.search(search)
