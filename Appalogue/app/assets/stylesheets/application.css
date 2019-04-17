@@ -112,7 +112,7 @@ footer {
 
 .search-desktop input, .search-mobile input {
 	padding: 6px;
-	height: 20px;
+	height: 32px;
 	border: none;
 	border-radius: 10px 0px 0px 10px;
 }

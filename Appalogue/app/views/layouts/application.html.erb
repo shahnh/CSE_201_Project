@@ -13,7 +13,7 @@
     </head>
 
     <!-- Body -->
-    <body>
+    <body> 
 
       <!-- Header: Includes logo and navigation elements -->
       <header>
@@ -31,24 +31,18 @@
           <% end %>
 
           <!-- <button type="button" id="login">Log In</button> -->
-          <%= form_tag(apps_path, :method => "get",   
-    class: 'navbar-form navbar-left') do %>  
-  <div class="input-group">  
-    <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
-    <div class="input-group-btn">  
-      <%= button_tag "Search", :class => 'fa fa-search',:name => nil%>  
-    </div>  
-  </div>  
-<% end %>
-
-          <!-- Search Bar : Desktop -->
-
-         
           <span class="search-desktop">
-            <input type="text" placeholder="Search...">
-            <button type="submit" id="search-desktop"><i class="fa fa-search"></i></button>
-          </span>
-        </div>
+            <%= form_tag(apps_path, :method => "get",
+            class: 'navbar-form navbar-left') do %>
+            <div class="input-group">
+              <%= search_field_tag :search, params[:search], placeholder: "Search...", class: "form-control" %>
+              <%= button_tag "", :class => 'fa fa-search',:name => nil%>
+              </div>
+              <% end %>
+            </span>
+            <!--<%= link_to "Advanced Search", new_search_path %>-->
+          </div>
+
   <!-- <h1 style="color:white; text-align: center;">APPALOGUE</h1> -->
   <!-- <h1 class="main-header" style="color:white; text-align: center;">APPALOGUE</h1> -->
         <div class="sub-header"> 

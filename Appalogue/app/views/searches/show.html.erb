@@ -1,0 +1,18 @@
+<h1>Search Result</h1>
+
+<p><%= link_to 'Back', new_search_path %></p>
+
+<% if @search.search_apps.empty? %>
+
+<p>No Records Found</p>
+
+<% else %>
+
+<% @search.search_apps.each do |c| %>
+<br>
+
+<div class="div">
+	<h1><%= c.name %></h1>
+</div>
+<% end %>
+<%end%>
