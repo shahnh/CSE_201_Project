@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(version: 2019_04_17_034652) do
     t.integer "app_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["app_id"], name: "index_comments_on_app_id"
   end
 
   create_table "searches", force: :cascade do |t|
