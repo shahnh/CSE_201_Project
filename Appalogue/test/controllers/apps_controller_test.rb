@@ -1,4 +1,4 @@
-require 'test_helper'
+require '../test_helper'
 
 class AppsControllerTest < ActionDispatch::IntegrationTest
   setup do

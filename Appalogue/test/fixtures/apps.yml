@@ -15,3 +15,11 @@ two:
   orgName: MyString
   price: MyString
   platform: MyString
+
+insta:
+  name: Instagram
+  description: Photography
+  version: 12
+  orgName: Facebook
+  price: Free
+  platform: iOS,Android
