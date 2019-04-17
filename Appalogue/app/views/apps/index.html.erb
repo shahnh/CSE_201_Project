@@ -3,6 +3,7 @@
 
 <div>
   <h1 style=" text-align: left;"><%= link_to 'Create New App', new_app_path %> </h1>
+  <h1 style=" text-align: left;"> <%= link_to 'Post', posts_path %> </h1>
 </div>
 <% @apps.each do |app| %>
 	<div class="column">
@@ -18,3 +19,34 @@
     	</div>
   	</div>
 <% end %>
+ 
+<!-- Obsolete Code -->
+<!-- <table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Version</th>
+      <th>Orgname</th>
+      <th>Price</th>
+      <th>Platform</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @apps.each do |app| %>
+      <tr>
+        <td><%= app.name %></td>
+        <td><%= app.description %></td>
+        <td><%= app.version %></td>
+        <td><%= app.orgName %></td>
+        <td><%= app.price %></td>
+        <td><%= app.platform %></td>
+        <td><%= link_to 'Show', app %></td>
+        <td><%= link_to 'Edit', edit_app_path(app) %></td>
+        <td><%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table> -->

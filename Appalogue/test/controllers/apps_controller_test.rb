@@ -5,15 +5,15 @@ class AppsControllerTest < ActionDispatch::IntegrationTest
     @app = apps(:one)
   end
 
-  # test "should get index" do
-  #   get apps_url
-  #   assert_response :success
-  # end
-
-  test "should get new" do
-    get new_app_url
+  test "should get index" do
+    get apps_url
     assert_response :success
   end
+  
+  # test "should get new" do
+  #   get new_app_url
+  #   assert_response :success
+  # end
   #
   # test "should create app" do
   #   assert_difference('App.count') do
