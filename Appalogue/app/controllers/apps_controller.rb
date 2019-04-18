@@ -7,10 +7,6 @@ class AppsController < ApplicationController
     #@apps = App.all
     #@apps = App.search(params[:search])
     @apps = App.where(["name LIKE ?","%#{params[:search]}%"])
-    @apps = App.where(["price LIKE ?","%#{params[:search]}%"])
-    @apps = App.where(["description LIKE ?","%#{params[:search]}%"])
-    @apps = App.where(["version LIKE ?","%#{params[:search]}%"])
-    @apps = App.where(["platform LIKE ?","%#{params[:search]}%"])
   end
 
   # GET /apps/1
