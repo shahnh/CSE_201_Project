@@ -37,12 +37,12 @@
             <div class="input-group">
               <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>
               <%= button_tag "", :class => 'fa fa-search',:name => nil%>
-
               </div>
+              <%= link_to "Advanced Search", new_search_path %>
               <% end %>
             </span>
 
-            <%= link_to "Advanced Search", new_search_path %>
+            
           </div>
 
 
