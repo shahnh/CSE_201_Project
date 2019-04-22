@@ -6,5 +6,10 @@
   					method: :delete,
   					data: { confirm: 'Are you sure?'} %></p>
   </div>
+  <ul class="rating">
+  	<% (1..5).each do |i| %>
+  	<li class="rating_star" data-stars= "<%= i %> " id = "<%= "#{@app.id}_#{i}" %>"></li>
+  	<% end %>
+  </ul>
 
 <% end %>

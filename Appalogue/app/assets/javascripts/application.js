@@ -14,3 +14,21 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+
+	$('.rating_star').click(function() {
+		var star = $(this);
+		var app_id = $(this).attr('data-movie-id');
+		var stars = $(this).attr('data-stars');
+
+		for(i = 1; i <= 5; i++){
+			if(i <= stars){
+				$('#' + app_id + '_' + i).addClass('on');
+			} else {
+   				$('#' + app_id + '_' + i).removeClass('on');
+			}
+		}
+	});
+
+});

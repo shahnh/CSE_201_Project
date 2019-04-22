@@ -184,6 +184,22 @@ footer {
 	float: left;
 }
 
+.rating{
+	margin: auto 0;
+}
+
+.rating_star {
+	background-image: url('/images/star_empty.png') 0 0;
+	width: 16px;
+	height: 16px;
+	display: block;
+	float: left;
+}
+
+.on {
+	background-position: 0 16px;
+}
+
 /* === Media Queries === */ /* ================================================================================================*/
 @media only screen and (max-width: 1200px) {
 	.column {
