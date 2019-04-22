@@ -1,15 +1,19 @@
-<h3>Add Comment</h3>
-<%= form_for([@app, @app.comments.build]) do |f| %>
-  <p>
-    <%= f.label :username %><br>
-    <%= f.text_field(:username, {:class => 'form-control'}) %>
-  </p>
-  <p>
-    <%= f.label :body %><br>
-    <%= f.text_area(:body, {:class => 'form-control'}) %>
+<% if current_user %>
+  <h3>Add Comment</h3>
+  <%= form_for([@app, @app.comments.build]) do |f| %>
+    <p>
+<!--       <%= f.label :username %><br> -->
+      <%= f.hidden_field(:username, value: current_user.email) %>
+    </p>
+    <p>
+      <%= f.label :body %><br>
+      <%= f.text_area(:body) %>
 
-  </p>
-  <p>
-    <%= f.submit({:class => 'btn btn-default'}) %>
-  </p>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+<% else %>
+  <p>You must be logged in to add a comment!</p>
 <% end %>
