@@ -7,7 +7,7 @@ class AppsController < ApplicationController
     #@apps = App.all
     #@apps = App.search(params[:search])
     @apps = App.where(["name LIKE ?","%#{params[:search]}%"])
-  end
+  end 
 
   # GET /apps/1
   # GET /apps/1.json

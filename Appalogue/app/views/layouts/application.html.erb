@@ -35,12 +35,14 @@
             <%= form_tag(apps_path, :method => "get",
             class: 'navbar-form navbar-left') do %>
             <div class="input-group">
-              <%= search_field_tag :search, params[:search], placeholder: "Search...", class: "form-control" %>
+              <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>
               <%= button_tag "", :class => 'fa fa-search',:name => nil%>
               </div>
+              <%= link_to "Advanced Search", new_search_path %>
               <% end %>
             </span>
-            <!--<%= link_to "Advanced Search", new_search_path %>-->
+
+            
           </div>
 
 
@@ -63,7 +65,7 @@
 
       <!-- Content -->
       <section>
-        <p class="notice"><%= notice %></p>
+<!--    <p class="notice"><%= notice %></p> -->
         <p class="alert"><%= alert %></p>
         <%= yield %>
       </section>

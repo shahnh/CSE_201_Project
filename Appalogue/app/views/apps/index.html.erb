@@ -13,8 +13,12 @@
 			<h3><%= app.price %></h3>
 			<p><%= app.description %></p>
         	<p><%= link_to '<button type="button" class="infoButton">More Info ></button>'.html_safe, app %></p>
-        	<!-- <p><%= link_to '<button type="button">Edit</button>'.html_safe, edit_app_path(app) %></p> -->
-        	<!-- <p><%= link_to '<button type="button">Destroy</button>'.html_safe, app, method: :delete, data: { confirm: 'Are you sure?' } %></p> -->
+          <% if current_user %>
+            <% if current_user.admin == true %>
+        	    <p><%= link_to '<button type="button">Edit</button>'.html_safe, edit_app_path(app) %></p>
+              <p><%= link_to '<button type="button">Destroy</button>'.html_safe, app, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+            <% end %>
+          <% end %>
     	</div>
   	</div>
 <% end %>
