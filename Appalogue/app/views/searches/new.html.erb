@@ -3,8 +3,39 @@
 <% form_for @search, html: {class: "pure-form"} do |s| %>
 
 	<div class="field">
-		<% s.label :keywords %><br/>
-		<% s.text_field :keywords %>
+		<% s.label :description %>Description<br/>
+		<% s.text_area :description %>
+
+	</div>
+	 <div class="field">
+    <%= s.label :description %>
+    <%= s.text_area :description %>
+  </div>
+
+	<div class="field">
+		<% s.label :price %><br/>
+		<% s.text_field :price %>
+
+	</div>
+
+	<div class="field">
+    <%= s.label :price %>
+    <%= s.text_field :price %>
+  </div>
+
+	<div class="field">
+		<% s.label :platform %><br/>
+		<% s.text_field :platform %>
+
+	</div>
+
+	<div class="field">
+    <%= s.label :platform %>
+    <%= s.text_field :platform %>
+  </div>
+
+	<div class="field">
+		<p><%= s.label :platform, "Platform" %> - <%= s.text_field :platform, size: 10 %></p>
 
 	</div>
 
