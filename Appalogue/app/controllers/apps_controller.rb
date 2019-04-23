@@ -56,7 +56,6 @@ class AppsController < ApplicationController
   def approve
     @app = App.find(params[:id])
     @app.update_attribute(:approved, true)
-    # redirect_back(fallback_location: fallback_location)
     respond_to do |format|
       format.html { redirect_to apps_url, notice: 'App was successfully approved!' }
       format.json { head :no_content }
@@ -68,7 +67,7 @@ class AppsController < ApplicationController
   def destroy
     @app.destroy
     respond_to do |format|
-      format.html { redirect_to current_page_url, notice: 'App was successfully destroyed.' }
+      format.html { redirect_to apps_url, notice: 'App was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

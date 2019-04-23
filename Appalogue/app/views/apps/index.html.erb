@@ -33,7 +33,7 @@
               <p><%= link_to '<button type="button" class="infoButton">More Info ></button>'.html_safe, app %></p>
               <% if current_user %>
                 <% if current_user.admin == true %>
-                  <p><%= link_to '<button type="button">Approve</button>'.html_safe, approve_app_path(app), method: :patch %>
+                  <p><%= link_to '<button type="button">Approve</button>'.html_safe, approve_app_path(app), method: :patch, data: { confirm: 'Are you sure?' } %>
                      <%= link_to '<button type="button">Deny</button>'.html_safe, app, method: :delete, data: { confirm: 'Are you sure?' } %></p>
                 <% end %>
               <% end %>
