@@ -44,7 +44,7 @@ class AppsController < ApplicationController
   def update
     respond_to do |format|
       if @app.update(app_params)
-        format.html { redirect_to @app, notice: 'App was successfully updated.' }
+        format.html { redirect_to @app, notice: 'App was successfully updated!' }
         format.json { render :show, status: :ok, location: @app }
       else
         format.html { render :edit }
@@ -53,12 +53,22 @@ class AppsController < ApplicationController
     end
   end
 
+  def approve
+    @app = App.find(params[:id])
+    @app.update_attribute(:approved, true)
+    # redirect_back(fallback_location: fallback_location)
+    respond_to do |format|
+      format.html { redirect_to apps_url, notice: 'App was successfully approved!' }
+      format.json { head :no_content }
+    end
+  end
+
   # DELETE /apps/1
   # DELETE /apps/1.json
   def destroy
     @app.destroy
     respond_to do |format|
-      format.html { redirect_to apps_url, notice: 'App was successfully destroyed.' }
+      format.html { redirect_to current_page_url, notice: 'App was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
