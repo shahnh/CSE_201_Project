@@ -1,4 +1,4 @@
-<h3>Comments</h3>
+ <h3>Comments</h3>
 <% @app.comments.each do |comment| %>
   <div class="well">
   <p><strong><%= comment.username %>: </strong><%= comment.body %>
@@ -12,7 +12,7 @@
   </div>
   <ul class="rating">
   	<% (1..5).each do |i| %>
-  	<li class="rating_star" data-stars= "<%= i %> " id = "<%= "#{@app.id}_#{i}" %>"></li>
+  	<li class="rating_star" data-stars= "<%= i %> " id = "<%= "#{@app.id}_#{i}" %>">2 </li>
   	<% end %>
   </ul>
 

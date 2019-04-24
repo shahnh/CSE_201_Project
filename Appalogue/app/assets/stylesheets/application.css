@@ -194,6 +194,7 @@ footer {
 	height: 16px;
 	display: block;
 	float: left;
+	cursor: pointer;
 }
 
 .on {
