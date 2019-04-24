@@ -163,9 +163,10 @@ footer {
 }
 
 .appImage {
-	width: 50%;
-	height: width;
-	margin-top: -10px;
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+	margin-top: 0px;
 }
 
 .search-mobile {
@@ -182,6 +183,23 @@ footer {
 	width: 25%;
 	height: 100%;
 	float: left;
+}
+
+.rating{
+	margin: auto 0;
+}
+
+.rating_star {
+	background-image: url('/images/star_empty.png') 0 0;
+	width: 16px;
+	height: 16px;
+	display: block;
+	float: left;
+	cursor: pointer;
+}
+
+.on {
+	background-position: 0 16px;
 }
 
 /* === Media Queries === */ /* ================================================================================================*/

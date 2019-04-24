@@ -1,10 +1,19 @@
-<h3>Comments</h3>
+ <h3>Comments</h3>
 <% @app.comments.each do |comment| %>
   <div class="well">
   <p><strong><%= comment.username %>: </strong><%= comment.body %>
-  	<%= link_to '[X]', [comment.app, comment], 
+  	<% if current_user %>
+  		<% if current_user.email == comment.username || current_user.moderator == true %>
+  			<%= link_to '[X]', [comment.app, comment], 
   					method: :delete,
   					data: { confirm: 'Are you sure?'} %></p>
+  		<% end %>
+  	<% end %>
   </div>
+  <ul class="rating">
+  	<% (1..5).each do |i| %>
+  	<li class="rating_star" data-stars= "<%= i %> " id = "<%= "#{@app.id}_#{i}" %>">2 </li>
+  	<% end %>
+  </ul>
 
 <% end %>

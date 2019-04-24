@@ -7,7 +7,7 @@ class AppsController < ApplicationController
     #@apps = App.all
     #@apps = App.search(params[:search])
     @apps = App.where(["name LIKE ?","%#{params[:search]}%"])
-  end
+  end 
 
   # GET /apps/1
   # GET /apps/1.json
@@ -44,12 +44,21 @@ class AppsController < ApplicationController
   def update
     respond_to do |format|
       if @app.update(app_params)
-        format.html { redirect_to @app, notice: 'App was successfully updated.' }
+        format.html { redirect_to @app, notice: 'App was successfully updated!' }
         format.json { render :show, status: :ok, location: @app }
       else
         format.html { render :edit }
         format.json { render json: @app.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def approve
+    @app = App.find(params[:id])
+    @app.update_attribute(:approved, true)
+    respond_to do |format|
+      format.html { redirect_to apps_url, notice: 'App was successfully approved!' }
+      format.json { head :no_content }
     end
   end
 
