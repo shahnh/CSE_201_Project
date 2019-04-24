@@ -1,0 +1,7 @@
+Appalogue - Build Script Documentation
+======================================
+To run...
+1. Open Terminal / Command Prompt / Powershell / etc. (user preference) and change to the directory containing Appalogue.
+2. Run the command "./build"
+3. If prompted, open the software in Google Chrome
+3. That's it!
