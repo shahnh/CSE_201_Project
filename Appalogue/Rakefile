@@ -3,15 +3,15 @@
 
 require_relative 'config/application'
 
-#Rails.application.load_tasks
+Rails.application.load_tasks
 
-task :default => %w[start]
+# task :default => %w[start]
 
-task :loadDependencies do
-	sh %{gem install bundler}
-	sh %{bundle install}
-end
+# task :loadDependencies do
+# 	sh %{gem install bundler}
+# 	sh %{bundle install}
+# end
 
-task :start => %[loadDependencies] do
-	sh %{rails s}
-end
+# task :start => %[loadDependencies] do
+# 	sh %{rails s}
+# end

@@ -2,23 +2,43 @@
 
 
 <div>
-  <h1 style=" text-align: left;"><%= link_to 'Create New App', new_app_path %> </h1>
+  <h1 style=" text-align: left;"><%= link_to 'Submit App for Approval', new_app_path %> </h1>
 </div>
 <% @apps.each do |app| %>
 	<div class="column">
-		<div style="text-align: center;" class="app">
-			<h1><%= app.name %></h1>
-      <%= image_tag(app.image, alt:"app.name Logo", class: "appImage") if app.image.attached? %>
-			<!-- <img src="" alt=> -->
-			<h3><%= app.price %></h3>
-			<p><%= app.description %></p>
-        	<p><%= link_to '<button type="button" class="infoButton">More Info ></button>'.html_safe, app %></p>
-          <% if current_user %>
-            <% if current_user.admin == true %>
-        	    <p><%= link_to '<button type="button">Edit</button>'.html_safe, edit_app_path(app) %></p>
-              <p><%= link_to '<button type="button">Destroy</button>'.html_safe, app, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <% if app.approved == true %>
+  		<div style="text-align: center;" class="app">
+  			<h1><%= app.name %></h1>
+        <%= image_tag(app.image, alt:"app.name Logo", class: "appImage") if app.image.attached? %>
+  			<!-- <img src="" alt=> -->
+  			<h3><%= app.price %></h3>
+  			<p><%= app.description %></p>
+          	<p><%= link_to '<button type="button" class="infoButton">More Info ></button>'.html_safe, app %></p>
+            <% if current_user %>
+              <% if current_user.admin == true %>
+          	    <p><%= link_to '<button type="button">Edit</button>'.html_safe, edit_app_path(app) %>
+                   <%= link_to '<button type="button">Destroy</button>'.html_safe, app, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+              <% end %>
             <% end %>
-          <% end %>
-    	</div>
+      	</div>
+      <% elsif current_user %>
+        <% if current_user.admin == true %>
+          <div style="text-align: center;" class="app">
+          <h1><%= app.name %></h1>
+          <p>Awaiting Approval...</p>
+          <%= image_tag(app.image, alt:"app.name Logo", class: "appImage") if app.image.attached? %>
+          <!-- <img src="" alt=> -->
+          <h3><%= app.price %></h3>
+          <p><%= app.description %></p>
+              <p><%= link_to '<button type="button" class="infoButton">More Info ></button>'.html_safe, app %></p>
+              <% if current_user %>
+                <% if current_user.admin == true %>
+                  <p><%= link_to '<button type="button">Approve</button>'.html_safe, approve_app_path(app), method: :patch, data: { confirm: 'Are you sure?' } %>
+                     <%= link_to '<button type="button">Deny</button>'.html_safe, app, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                <% end %>
+              <% end %>
+          </div>
+        <% end %>
+      <% end %>
   	</div>
 <% end %>
