@@ -1,12 +1,8 @@
 <h1>Advanced Search</h1>
 
-<% form_for @search, html: {class: "pure-form"} do |s| %>
+<%= form_for @search, html: {class: "pure-form"} do |s| %>
 
-	<div class="field">
-		<% s.label :description %>Description<br/>
-		<% s.text_area :description %>
-
-	</div>
+	
 	 <div class="field">
     <%= s.label :description %>
     <%= s.text_area :description %>
@@ -34,13 +30,10 @@
     <%= s.text_field :platform %>
   </div>
 
-	<div class="field">
-		<p><%= s.label :platform, "Platform" %> - <%= s.text_field :platform, size: 10 %></p>
-
-	</div>
+	
 
 	<div class="actions"><%= s.submit "Search", class: "pure-buttom pure-button-primary"%></div>
 
-	<% end%>
+<% end%>
 
-	<p><%= link_to 'Back', apps_path %></p>
+<p><%= link_to 'Back', apps_path %></p>
