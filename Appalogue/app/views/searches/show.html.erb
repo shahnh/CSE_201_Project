@@ -11,11 +11,14 @@
 <% @search.search_apps.each do |c| %>
 <br>
 
-<div class="div">
+<div class="div"> 
 	<h1><%= c.name %></h1>
 	<h1>Price: $<%= c.price %></h1>
 	<h1>Description: <%=c.description %></h1>
 	<h1>Platform: <%=c.platform %></h1>
+	<h1>Orgname: <%=c.orgName %></h1>
+	<h1>Version: <%=c.version %></h1>
+
 </div>
 <% end %>
 <%end%>
