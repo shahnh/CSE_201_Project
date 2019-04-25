@@ -139,13 +139,88 @@ footer {
 	/* Appearance */
 	background-color: white;
 	width: 70%;
-	height: 350px;
+	height: 310px;
 	border-radius: 10px;
 	display: block;
 	padding: 1px;
 	
 	/* Font */
 	
+}
+
+.unapprovedApp {
+	/* Location */
+	text-align: center;
+	margin: 10px auto;
+	
+	/* Appearance */
+	background-color: #C62034;
+	width: 70%;
+	height: 310px;
+	border-radius: 10px;
+	display: block;
+	padding: 1px;
+	
+	/* Font */
+}
+
+.app h1, h3 {
+	margin-top: 5px;
+}
+
+
+.unapprovedApp h1, h3 {
+	margin-top: 5px;
+}
+
+.appDescription {
+	/* Location  */
+	margin: -15px auto 0px auto;
+
+	/* Appearance */
+	width: 75%;
+	height: 15%;
+	text-align: center;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	
+}
+
+.placeholder {
+	/* Location */
+	text-align: center;
+	margin: 10px auto;
+	
+	/* Appearance */
+	width: 70%;
+	height: 170px;
+	border-radius: 10px;
+	display: block;
+	padding: 1px;
+	
+	/* Font */
+	
+}
+
+.appImage {
+	width: 125px;
+	height: 125px;
+	object-fit: cover;
+	margin-top: -15px;
+}
+
+.otherButton {
+	/* Appearance */
+	width: 40px;
+	height: 40px;
+	border: none;
+	border-radius: 10px;
+	background-color: #007AA7;
+	color: #FFFFFF;
+
+	/* Font */
+	font-size: 15px;
+	font-weight: bold;
 }
 
 .infoButton {
@@ -160,13 +235,6 @@ footer {
 	/* Font */
 	font-size: 15px;
 	font-weight: bold;
-}
-
-.appImage {
-	width: 150px;
-	height: 150px;
-	object-fit: cover;
-	margin-top: 0px;
 }
 
 .search-mobile {
@@ -185,7 +253,13 @@ footer {
 	float: left;
 }
 
-.rating{
+.columnShow {
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+
+.rating {
 	margin: auto 0;
 }
 
@@ -227,11 +301,51 @@ footer {
 		border-radius: 10px 0px 0px 10px;
 		width: 100px;
 	}
+
+	.otherButton {
+		/* Appearance */
+		width: 30px;
+		height: 30px;
+	}
+
+	.infoButton {
+		/* Appearance */
+		width: 100px;
+		height: 30px;
+	}
 }
 
 @media only screen and (max-width: 500px) {
 	.column {
 		width: 100%;
+	}
+
+	.otherButton {
+		/* Appearance */
+		width: 40px;
+		height: 40px;
+		border: none;
+		border-radius: 10px;
+		background-color: #007AA7;
+		color: #FFFFFF;
+
+		/* Font */
+		font-size: 15px;
+		font-weight: bold;
+	}
+
+	.infoButton {
+		/* Appearance */
+		width: 100px;
+		height: 40px;
+		border: none;
+		border-radius: 10px;
+		background-color: #007AA7;
+		color: #FFFFFF;
+
+		/* Font */
+		font-size: 15px;
+		font-weight: bold;
 	}
 }
 
@@ -258,6 +372,8 @@ footer {
 	body {
 		margin-top: 135px;
 	}
+
+
 	
 /*
 	.search input {
