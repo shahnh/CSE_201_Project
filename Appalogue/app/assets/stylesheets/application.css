@@ -37,7 +37,6 @@
 
 /* === Tags === */ /* ================================================================================================*/
  body {
-	margin: 84px 0px;
     background-color: lightblue;
 	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
  }
@@ -50,6 +49,7 @@ header {
 	width: 101.5%;
 	overflow: hidden;
 	height: 84px;
+	z-index: 1;
 }
 
 footer {
@@ -59,6 +59,7 @@ footer {
 	padding: 5px;
 	position: fixed;
   	bottom: 0;
+  	z-index: 1;
 }
 
 /* === ID's === */ /* ================================================================================================*/
@@ -94,11 +95,20 @@ footer {
 	float: left;
 }
 
-#copyright {
+#copyright, #advanced-search {
 	color: white;
-	margin: 10px;
-	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
-	
+	margin: 8px;
+}
+
+#advLink {
+	color: white;
+	text-decoration: none;
+}
+
+#section {
+	margin: 88px 0px 70px 0px;
+	position: relative;
+	overflow:auto; 
 }
 
 /* === Classes === */ /* ================================================================================================*/
