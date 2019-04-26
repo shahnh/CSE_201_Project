@@ -1,19 +1,31 @@
+<!-- If user is logged -->
 <% if current_user %>
-  <h3>Add Comment</h3>
-  <%= form_for([@app, @app.comments.build]) do |f| %>
+
+  <!-- If user has not left a review, show review content -->
+  <h3>Add Review</h3>
+  <% @switch = false %>
+  <% @app.comments.each do |comment| %>
+    <% if current_user.email == comment.username %>
+      <% @switch = true %>
+    <% end %>
+  <% end %>
+  <% if @switch == true %>
+    <p>You have already left a review!</p>
+  <% else %>
+    <%= form_for([@app, @app.comments.build]) do |f| %>
     <p>
-<!--       <%= f.label :username %><br> -->
+<!--  <%= f.label :username %><br> -->
       <%= f.hidden_field(:username, value: current_user.email) %>
     </p>
     <p>
       <%= f.label :body %><br>
       <%= f.text_area(:body) %>
-
     </p>
     <p>
       <%= f.submit %>
     </p>
-  <% end %>
+    <% end %> 
+  <% end %>  
 <% else %>
-  <p>You must be logged in to add a comment!</p>
+  <p>You must be logged in to add a review!</p>
 <% end %>
