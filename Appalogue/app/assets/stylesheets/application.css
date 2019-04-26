@@ -107,7 +107,6 @@ footer {
 	margin-right: 15px;
 	display: inline-block;
 	float: right;
-
 }
 
 .search-desktop input, .search-mobile input {
@@ -115,16 +114,19 @@ footer {
 	height: 32px;
 	border: none;
 	border-radius: 10px 0px 0px 10px;
+	margin-bottom: 10px;
+	vertical-align: top;
 }
 
 .search-desktop button, .search-mobile button {
 	border: none;
 	height: 32px;
 	width: 34px;
-	margin-left: -4px;
+	margin-left: -5px;
 	cursor: pointer;
 	background-color: #007AA7;
 	border-radius: 0px 10px 10px 0px;
+	vertical-align: top;
 }
 
 .fa-search {
@@ -296,7 +298,7 @@ footer {
 	
 	.search-desktop input {
 		padding: 6px;
-		height: 20px;
+		height: 32px;
 		border: none;
 		border-radius: 10px 0px 0px 10px;
 		width: 100px;
