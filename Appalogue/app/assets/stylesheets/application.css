@@ -153,7 +153,7 @@ footer {
 	/* Appearance */
 	background-color: white;
 	width: 70%;
-	height: 340px;
+	height: 330px;
 	border-radius: 20px;
 	display: block;
 	padding: 5px;
@@ -170,10 +170,10 @@ footer {
 	/* Appearance */
 	background-color: #C62034;
 	width: 70%;
-	height: 310px;
-	border-radius: 10px;
+	height: 330px;
+	border-radius: 20px;
 	display: block;
-	padding: 1px;
+	padding: 5px;
 	
 	/* Font */
 }
