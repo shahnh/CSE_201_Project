@@ -1,45 +1,38 @@
 <p id="notice"><%= notice %></p>
-<div class="columnShow">
-  <div style="text-align: center;" class="app">
-    <p>
-      <strong>Name:</strong>
-      <%= @app.name %>
-    </p>
+<div class="columnShow" style="background-color: white;">
+  <p>
+    <h1 style="font-size: 50px; margin: 0px"><b><%= @app.name %></b></h1>
+  </p>
 
-    <p>
-      <strong>Description:</strong>
-      <%= @app.description %>
-    </p>
+  <p><%= @app.description %></p>
 
-    <p>
-      <strong>Version:</strong>
-      <%= @app.version %>
-    </p>
+  <p>
+    <%= image_tag(@app.image, alt:"@app.name Logo", class: "appImageShow") if @app.image.attached? %>
+  </p>
 
-    <p>
-      <strong>Orgname:</strong>
-      <%= @app.orgName %>
-    </p>
+  <p>
+    <strong>Current Version:</strong>
+    <%= @app.version %>
+  </p>
 
-    <p>
-      <strong>Price:</strong>
-      <%= @app.price %>
-    </p>
+  <p>
+    <strong>Developer:</strong>
+    <%= @app.orgName %>
+  </p>
 
-    <p>
-      <strong>Platform:</strong>
-      <%= @app.platform %>
-    </p>
+  <p>
+    <strong>Platform:</strong>
+    <%= @app.platform %>
+  </p>
 
-    <p>
+  <h2><%= @app.price %></h2>
+    <!-- <p>
       <%= image_tag(@app.image, alt:"@app.name Logo", class: "appImage") if @app.image.attached? %>
-    </p>
-  </div>
+    </p> -->
   <%= link_to 'Edit', edit_app_path(@app) %> |
   <%= link_to 'Back', apps_path %>
 </div>
 
-<hr>
 <div class="columnShow">
   <%= render 'comments/comments'%>
   <%= render 'comments/form' %>

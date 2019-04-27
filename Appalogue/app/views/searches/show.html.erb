@@ -1,4 +1,4 @@
-<h1>Search Result</h1>
+<h1 style="font-size: 40px; margin: 0px">Search Results</h1>
 
 <p><%= link_to 'Back', new_search_path %></p>
 
@@ -7,18 +7,25 @@
 <p>No Records Found</p>
 
 <% else %>
-
-<% @search.search_apps.each do |c| %>
-<br>
-
-<div class="div"> 
-	<h1><%= c.name %></h1>
-	<h1>Price: $<%= c.price %></h1>
-	<h1>Description: <%=c.description %></h1>
-	<h1>Platform: <%=c.platform %></h1>
-	<h1>Orgname: <%=c.orgName %></h1>
-	<h1>Version: <%=c.version %></h1>
-
-</div>
+	<% @search.search_apps.each do |app| %>
+	 <% if app.approved == true %>
+		<div class="column">
+			<div class="app">
+	  			<h1><%= app.name %></h1>
+	        <%= image_tag(app.image, alt:"app.name Logo", class: "appImage") if app.image.attached? %>
+	  			<h3><%= app.price %></h3>
+	  			<h3 style="margin-top: -10px">*review*</h3>
+	  			<p class="appDescription"><%= app.description %></p> <!-- FIX -->
+	        <p style="margin-top: 0px;"><%= link_to '<button type="button" class="infoButton">More Info ></button>'.html_safe, app %>
+	        <% if current_user %>
+	          <% if current_user.admin == true %>
+	            <%= link_to '<button type="button" class="fa fa-pencil otherButton"></button>'.html_safe, edit_app_path(app) %>
+	                <%= link_to '<button type="button" class="fa fa-trash otherButton"></button>'.html_safe, app, method: :delete, data: { confirm: 'Are you sure?'} %>
+	          <% end %>
+	        <% end %>
+	        </p>
+	      </div>
+		</div>
+	<% end %>
+	<% end %>
 <% end %>
-<%end%>

@@ -1,24 +1,24 @@
-<h1>Advanced Search</h1>
+<h1 style="font-size: 40px; margin: 0px">Advanced Search</h1>
 
 <%= form_for @search, html: {class: "pure-form"} do |s| %>
 
 	
 	 <div class="field">
-    <%= s.label :description %>
+    <%= s.label :description %><br>
     <%= s.text_area :description %>
   </div>
 
 
  
 	<div class="field">
-    <%= s.label :price %>
+    <%= s.label :price %><br>
     <%= s.text_field :price %>
   </div>
 
 
 
 	<div class="field">
-    <%= s.label :platform %>
+    <%= s.label :platform %><br>
     <%= s.text_field :platform %>
   </div>
 <!--
@@ -33,8 +33,9 @@
   </div>
 
 -->
-	<div class="actions"><%= s.submit "Search", class: "pure-buttom pure-button-primary"%></div>
+  <br>
+	<div class="actions"><%= s.submit "Search", class: "infoButton"%></div>
 
 <% end%>
 
-<p><%= link_to 'Back', apps_path %></p>
+<!-- <p><%= link_to 'Back', apps_path %></p> -->
