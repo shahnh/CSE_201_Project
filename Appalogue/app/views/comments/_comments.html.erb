@@ -1,19 +1,23 @@
  <h2>Reviews</h2>
 <% @app.comments.each do |comment| %>
-  <div class="well">
-  <p><strong><%= comment.username %>: </strong><%= comment.body %>
-  	<% if current_user %>
-  		<% if current_user.email == comment.username || current_user.moderator == true %>
-  			<%= link_to '[X]', [comment.app, comment], 
-  					method: :delete,
-  					data: { confirm: 'Are you sure?'} %></p>
-  		<% end %>
-  	<% end %>
-  </div>
-  <ul class="rating">
+  <div class="review">
+
+    <!-- Trash can icon : only appears if user is a Moderator or the review was made by the user -->
+    <% if current_user %>
+      <% if current_user.email == comment.username || current_user.moderator == true %>
+        <%= link_to '<button type="button" class="fa fa-trash commentButton"></button>'.html_safe, [comment.app, comment], method: :delete, data: { confirm: 'Are you sure?'} %>
+      <% end %>
+    <% end %>
+    <h3><b><%= comment.username %></b></h3>
+    <p>
+    
+  <%= comment.body %>
+  </p></div>
+
+<!--   <ul class="rating">
   	<% (1..5).each do |i| %>
   	<li class="rating_star" data-stars= "<%= i %> " id = "<%= "#{@app.id}_#{i}" %>">2 </li>
   	<% end %>
-  </ul>
+  </ul> -->
 
 <% end %>

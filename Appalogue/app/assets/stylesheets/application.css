@@ -73,7 +73,7 @@ footer {
 	/* Location */
 	display: inline-block;
 	margin-top: 20px;
-	margin-right: 25px;
+	margin-right: 35px;
 	float: right;
 	
 	/* Appearance */
@@ -295,6 +295,25 @@ footer {
 .appImageShow {
 	width: 50%;
 	border: 3px black double;
+}
+
+.commentButton {
+	/* Appearance */
+	height: 20px;
+	border: none;
+	border-radius: 5px;
+	background-color: #007AA7;
+	color: #FFFFFF;
+	cursor: pointer;
+	float: right;
+}
+
+.review {
+	background-color: white;
+	padding: 10px;
+	text-align: left;
+	border-radius: 10px;
+	border: 3px double #007AA7;
 }
 
 /* === Media Queries === */ /* ================================================================================================*/
