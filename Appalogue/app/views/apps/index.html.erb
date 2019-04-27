@@ -15,7 +15,7 @@
   			<h1><%= app.name %></h1>
         <%= image_tag(app.image, alt:"app.name Logo", class: "appImage") if app.image.attached? %>
         <h3><%= app.price %></h3>
-        <h3 style="margin-top: -10px">*review*</h3>
+        <div class="star-rating" style="margin-top: -15px;" data-score=<%= app.comments.average(:rating).round(2) %>></div>
   			<p class="appDescription"><%= app.description %></p> <!-- FIX -->
         <p style="margin-top: 5px;"><%= link_to '<button type="button" class="infoButton">More Info ></button>'.html_safe, app %>
         <% if current_user %>
@@ -34,7 +34,7 @@
             <h1><%= app.name %></h1>
             <%= image_tag(app.image, alt:"app.name Logo", class: "appImage") if app.image.attached? %>
             <h3><%= app.price %></h3>
-            <h3 style="margin-top: -10px">*review*</h3>
+            <div class="star-rating" style="margin-top: -15px;" data-score=5></div>
             <p class="appDescription">Awaiting admin approval...</p> <!-- <%= app.description %></p> -->
             <p style="margin-top: 5px;"><%= link_to '<button type="button" class="infoButton">More Info ></button>'.html_safe, app %>
             <% if current_user %>
@@ -58,3 +58,16 @@
     <p><%= link_to '<button type="button" class="infoButton">Add Submission ></button>'.html_safe, new_app_path %></p>
   </div>
 </div>
+
+<script>
+  $('.star-rating').raty({
+    path: '/assets/',
+    readOnly: true,
+    half: true,
+    numberMax: 5,
+    score: function() {return $(this).attr('data-score');}
+  });
+
+  //reload stars/stop duplication
+  $('.star-rating').raty('reload');
+</script>

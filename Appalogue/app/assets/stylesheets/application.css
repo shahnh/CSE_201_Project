@@ -189,7 +189,7 @@ footer {
 
 .appDescription {
 	/* Location  */
-	margin: -15px auto 0px auto;
+	margin: -1px auto;
 
 	/* Appearance */
 	width: 75%;
@@ -268,11 +268,12 @@ footer {
 }
 
 .columnShow {
-	width: 47%;
+	width: 45%;
 	height: 100%;
-	float: left;
 	padding: 1%;
 	text-align: center;
+	display: inline-block;
+	vertical-align: top;
 }
 
 .rating {
@@ -294,7 +295,7 @@ footer {
 
 .appImageShow {
 	width: 50%;
-	border: 3px black double;
+	border: 3px double #007AA7;
 }
 
 .commentButton {
@@ -314,6 +315,7 @@ footer {
 	text-align: left;
 	border-radius: 10px;
 	border: 3px double #007AA7;
+	margin: 3px 0px;
 }
 
 /* === Media Queries === */ /* ================================================================================================*/
@@ -355,7 +357,7 @@ footer {
 	}
 
 	.columnShow {
-		width: 98%;
+		width: 92%;
 	}
 }
 

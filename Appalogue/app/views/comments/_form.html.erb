@@ -20,14 +20,14 @@
     </p>
 
     <p>
-      <%= f.label :body %><br>
-      <%= f.text_area(:body) %>
+      <%= f.label :rating %><br>
+      <div id="star-rating" style="margin-top: -10px"></div>
+<!--       <%= f.select :rating, options_for_select([1, 2, 3, 4, 5]) %> -->
     </p>
 
     <p>
-      <%= f.label :rating %><br>
-<!--       <%= f.text_field(:rating) %> -->
-      <%= f.select :rating, options_for_select([1, 2, 3, 4, 5]) %>
+      <%= f.label :body %><br>
+      <%= f.text_area(:body) %>
     </p>
 
     <p>
@@ -39,3 +39,11 @@
 <% else %>
   <p>You must be logged in to add a review!</p>
 <% end %>
+
+<script>
+  $('#star-rating').raty({
+    path: '/assets/',
+    numberMax: 5,
+    scoreName: 'comment[rating]'
+  });
+</script>

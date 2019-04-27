@@ -1,4 +1,4 @@
- <h2>Reviews</h2>
+<h2 style="margin-bottom: 10px;">Reviews</h2>
 <% @app.comments.each do |comment| %>
   <div class="review">
 
@@ -8,16 +8,23 @@
         <%= link_to '<button type="button" class="fa fa-trash commentButton"></button>'.html_safe, [comment.app, comment], method: :delete, data: { confirm: 'Are you sure?'} %>
       <% end %>
     <% end %>
-    <h3><b><%= comment.username %></b></h3>
-    <p>
-    
-  <%= comment.body %>
-  </p></div>
 
-<!--   <ul class="rating">
-  	<% (1..5).each do |i| %>
-  	<li class="rating_star" data-stars= "<%= i %> " id = "<%= "#{@app.id}_#{i}" %>">2 </li>
-  	<% end %>
-  </ul> -->
+    <h3><b><%= comment.username %></b></h3>
+    <div class="star-rating" data-score=<%= comment.rating %> style="margin-top: -10px;"></div>
+    <p style="margin-top: 0px;">
+      <%= comment.body %>
+    </p></div>
 
 <% end %>
+
+<script>
+  $('.star-rating').raty({
+    path: '/assets/',
+    readOnly: true,
+    numberMax: 5,
+    score: function() {return $(this).attr('data-score');}
+  });
+
+  //reload stars/stop duplication
+  $('.star-rating').raty('reload');
+</script>
