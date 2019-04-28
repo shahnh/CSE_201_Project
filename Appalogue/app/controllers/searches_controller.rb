@@ -1,5 +1,5 @@
 class SearchesController < ApplicationController
-
+ 
 	def  new
 		@search = Search.new
 	
@@ -17,11 +17,11 @@ class SearchesController < ApplicationController
 
 
 
-
+ 
 
 	private
 
 	def search_params
-		params.require(:search).permit( :description, :price, :platform, :orgName, :version, )
+		params.require(:search).permit(:description, :price, :platform, :orgName, :version, :name)
 	end
 end
