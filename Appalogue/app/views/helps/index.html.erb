@@ -1,0 +1,44 @@
+<script>
+$(document).ready(function(){
+  $("#clicker1").click(function(){
+    $("#myDIV").toggle();
+  });
+});
+</script>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Help</h1>
+<br>
+<br>
+<h2>FAQs</h2>
+<br>
+<h3>How do I submit and app?</h3>
+<p>Submitting and app is incredibly simple!!! Click this for a visual walk-through -> <button id="clicker1">Click Me</button>
+
+<div id="myDIV">
+  The first step is to go the home page clicking the logo below in the upper left hand corner
+            <%= link_to image_tag(asset_path('icon.png') %>
+            <br>
+            <div>The next step is to find the button displayed and circled below and begin creating your app</div>
+            <%= link_to image_tag(asset_path('Help step.png') %>
+</div> </p>
+<br>
+<h3>How do I search for an app?</h3>
+<p></p>
+<br>
+<h3>Why is this website so good?</h3>
+<p>We have a competitive hiring process that leaves us with the best people in the buisiness. With everyone on the team holding a PhD from an Ivy League school, it is hard to achieve a product that is anything less than excellent ;)</p>
+<br>
+<br>
+<h2>Still confused? For 24/7 support, email anyone on the team. Your satisfaction is our number one priority.</h2>
+
+<div>
+
+ <p>Jake Strictler: <a href="url"> sampleemail@fake.com</a></p> 
+ <p>Brad Schmidtz: <a href="url"> sampleemail@fake.com</a></p> 
+ <p>Nishil Shah: <a href="url"> sampleemail@fake.com</a></p> 
+ <p>Dan Falokun: <a href="url"> sampleemail@fake.com</a></p> 
+ <p>Ian Brighton: <a href="url"> sampleemail@fake.com</a></p> 
+
+</div>
