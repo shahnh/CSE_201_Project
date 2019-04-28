@@ -2,10 +2,11 @@
 
 <%= form_for @search, html: {class: "pure-form"} do |s| %>
 
+
 	 <div class="field">
     <%= s.label :description %><br>
     <%= s.text_area :description %>
-  </div>
+  </div> 
 
   <div class="field">
     <%= s.label :orgname %>
@@ -22,12 +23,13 @@
     <%= s.text_field :platform %>
   </div>
   
-<!--
+
+
    <div class="field">
     <%= s.label :version %>
     <%= s.text_field :version %>
   </div>
--->
+
   <br>
 	<div class="actions"><%= s.submit "Search", class: "infoButton"%></div>
 
