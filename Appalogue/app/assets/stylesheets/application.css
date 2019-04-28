@@ -295,7 +295,6 @@ footer {
 
 .appImageShow {
 	width: 50%;
-	border: 3px double #007AA7;
 }
 
 .commentButton {
@@ -418,7 +417,7 @@ footer {
 	body {
 		margin-top: 135px;
 	}
-
+}
 
 	
 /*
