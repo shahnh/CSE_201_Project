@@ -34,6 +34,9 @@ gem 'bcrypt'
 gem 'jquery-rails'
 # gem 'font-awesome-rails'
 
+# Use rails-money for money stuff
+# gem 'money-rails'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

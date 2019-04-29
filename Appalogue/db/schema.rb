@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_27_160236) do
+ActiveRecord::Schema.define(version: 2019_04_29_175224) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2019_04_27_160236) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "approved", default: false
+    t.string "storeLink"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -53,6 +54,11 @@ ActiveRecord::Schema.define(version: 2019_04_27_160236) do
     t.datetime "updated_at", null: false
     t.integer "rating"
     t.index ["app_id"], name: "index_comments_on_app_id"
+  end
+
+  create_table "helps", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "searches", force: :cascade do |t|

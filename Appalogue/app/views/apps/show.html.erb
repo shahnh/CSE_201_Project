@@ -11,6 +11,8 @@
     <%= image_tag(@app.image, alt:"@app.name Logo", class: "appImageShow") if @app.image.attached? %>
   </p>
 
+  <h2><%= number_to_currency(@app.price) %></h2>
+
   <p>
     <strong>Current Version:</strong>
     <%= @app.version %>
@@ -22,15 +24,23 @@
   </p>
 
   <p>
-    <strong>Platform:</strong>
+    <strong>Platform(s):</strong>
     <%= @app.platform %>
   </p>
 
-  <h2><%= @app.price %></h2>
+  <p>
+    <%= link_to '<button type="button" class="infoButton">View App in Store</button>'.html_safe, @app.storeLink %>
+<!--     <%= @app.platform %> -->
+  </p>
+
     <!-- <p>
       <%= image_tag(@app.image, alt:"@app.name Logo", class: "appImage") if @app.image.attached? %>
     </p> -->
-  <%= link_to 'Edit', edit_app_path(@app) %> |
+  <% if current_user %>
+    <% if current_user.admin == true %>
+      <%= link_to 'Edit', edit_app_path(@app) %> |
+    <% end %>  
+  <% end %>
   <%= link_to 'Back', apps_path %>
 </div>
 
