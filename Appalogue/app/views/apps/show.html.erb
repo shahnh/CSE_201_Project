@@ -26,11 +26,15 @@
     <%= @app.platform %>
   </p>
 
-  <h2><%= @app.price %></h2>
+  <h2><%= number_to_currency(@app.price) %></h2>
     <!-- <p>
       <%= image_tag(@app.image, alt:"@app.name Logo", class: "appImage") if @app.image.attached? %>
     </p> -->
-  <%= link_to 'Edit', edit_app_path(@app) %> |
+  <% if current_user %>
+    <% if current_user.admin == true %>
+      <%= link_to 'Edit', edit_app_path(@app) %> |
+    <% end %>  
+  <% end %>
   <%= link_to 'Back', apps_path %>
 </div>
 

@@ -13,37 +13,37 @@
  
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, required: true %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, required: true %>
   </div>
 
   <div class="field">
     <%= form.label :version %>
-    <%= form.text_field :version %>
+    <%= form.text_field :version, required: true %>
   </div>
 
   <div class="field">
-    <%= form.label :orgName %>
-    <%= form.text_field :orgName %>
+    <%= form.label :developer %>
+    <%= form.text_field :orgName, required: true %>
   </div>
 
   <div class="field">
     <%= form.label :price %>
-    <%= form.text_field :price %>
+    <%= form.number_field :price, required: true, step: 0.01 %>
   </div>
 
   <div class="field">
     <%= form.label :platform %>
-    <%= form.text_field :platform %>
+    <%= form.text_field :platform, required: true %>
   </div>
 
   <div class="field">
     <%= form.label :image %>
-    <%= form.file_field :image %>
+    <%= form.file_field :image, required: true %>
   </div>
 
   <div class="actions">
