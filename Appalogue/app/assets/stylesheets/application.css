@@ -113,6 +113,16 @@ footer {
 	text-align: center;
 }
 
+#notice, #alert {
+	font-size: 20px;
+	color: white;
+	text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+
 /* === Classes === */ /* ================================================================================================*/
 .search-desktop {
 	margin-top: 24px;
@@ -122,6 +132,7 @@ footer {
 }
 
 .search-desktop input, .search-mobile input {
+	-webkit-appearance: none;
 	padding: 6px;
 	height: 32px;
 	border: none;

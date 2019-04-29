@@ -55,7 +55,11 @@
   <div class="app">
     <h1>Submit an App</h1>
     <p>Have an app you'd like to see added? Click below to add it to the approval list!</p>
-    <p><%= link_to '<button type="button" class="infoButton">Add Submission ></button>'.html_safe, new_app_path %></p>
+    <% if current_user %>
+      <p><%= link_to '<button type="button" class="infoButton">Add Submission ></button>'.html_safe, new_app_path %></p>
+    <% else %>
+      <p>You must be logged in to submit an app!</p>
+    <% end %>
   </div>
 </div>
 
