@@ -37,8 +37,13 @@
   </div>
 
   <div class="field">
+    <%= form.label :platform %><br>
+    <%= form.text_field :platform, required: true %>
+  </div>
+
+  <div class="field">
     <%= form.label :store_link %><br>
-    <%= form.url_field :platform, required: true %>
+    <%= form.url_field :storeLink, required: true %>
   </div><br>
 
   <div class="field" style="margin-left: 75px">

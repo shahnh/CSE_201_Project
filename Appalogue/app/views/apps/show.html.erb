@@ -24,7 +24,12 @@
   </p>
 
   <p>
-    <%= link_to '<button type="button" class="infoButton">View App in Store</button>'.html_safe, @app.platform %>
+    <strong>Platform(s):</strong>
+    <%= @app.platform %>
+  </p>
+
+  <p>
+    <%= link_to '<button type="button" class="infoButton">View App in Store</button>'.html_safe, @app.storeLink %>
 <!--     <%= @app.platform %> -->
   </p>
 
