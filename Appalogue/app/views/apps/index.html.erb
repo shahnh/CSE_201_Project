@@ -14,7 +14,11 @@
   		<div class="app">
   			<h1><%= app.name %></h1>
         <%= image_tag(app.image, alt:"app.name Logo", class: "appImage") if app.image.attached? %>
-        <h3><%= number_to_currency(app.price) %></h3>
+        <% if number_to_currency(app.price) == "$0.00" %>
+          <h3>Free!</h3>
+        <% else %>
+          <h3><%= number_to_currency(app.price) %></h3>
+        <% end %>
         <div class="star-rating" style="margin-top: -15px;" data-score=<%= app.comments.average(:rating) %>></div>
   			<p class="appDescription"><%= app.description %></p> <!-- FIX -->
         <p style="margin-top: 5px;"><%= link_to '<button type="button" class="infoButton">More Info ></button>'.html_safe, app %>
@@ -33,7 +37,11 @@
           <div class="unapprovedApp">
             <h1><%= app.name %></h1>
             <%= image_tag(app.image, alt:"app.name Logo", class: "appImage") if app.image.attached? %>
-            <h3><%= number_to_currency(app.price) %></h3>
+            <% if number_to_currency(app.price) == "$0.00" %>
+              <h3>Free!</h3>
+            <% else %>
+              <h3><%= number_to_currency(app.price) %></h3>
+            <% end %>
             <div class="star-rating" style="margin-top: -15px;" data-score=<%= app.comments.average(:rating) %>></div>
             <p class="appDescription">Awaiting admin approval...</p> <!-- <%= app.description %></p> -->
             <p style="margin-top: 5px;"><%= link_to '<button type="button" class="infoButton">More Info ></button>'.html_safe, app %>

@@ -12,39 +12,39 @@
   <% end %>
  
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :name %><br>
     <%= form.text_field :name, required: true %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label :description %><br>
     <%= form.text_area :description, required: true %>
   </div>
 
   <div class="field">
-    <%= form.label :version %>
+    <%= form.label :version %><br>
     <%= form.text_field :version, required: true %>
   </div>
 
   <div class="field">
-    <%= form.label :developer %>
+    <%= form.label :developer %><br>
     <%= form.text_field :orgName, required: true %>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
+    <%= form.label :price %><br>
     <%= form.number_field :price, required: true, step: 0.01 %>
   </div>
 
   <div class="field">
-    <%= form.label :platform %>
-    <%= form.text_field :platform, required: true %>
-  </div>
+    <%= form.label :store_link %><br>
+    <%= form.url_field :platform, required: true %>
+  </div><br>
 
-  <div class="field">
+  <div class="field" style="margin-left: 75px">
     <%= form.label :image %>
     <%= form.file_field :image, required: true %>
-  </div>
+  </div><br>
 
   <div class="actions">
     <%= form.submit %>
