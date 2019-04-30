@@ -13,7 +13,7 @@ Appalogue is a web application where you can stop by to discover new application
 		3. Click on Log In button that is under password
 
 	• Submit an App request
-		1. Make sure you’re Log In
+		1. Make sure you’re logged In
 		2. Click on Add Submission button
 		3. Type in the information about a new app
 		4. Click on Create App button to submit it
