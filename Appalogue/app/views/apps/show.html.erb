@@ -11,7 +11,11 @@
     <%= image_tag(@app.image, alt:"@app.name Logo", class: "appImageShow") if @app.image.attached? %>
   </p>
 
-  <h2><%= number_to_currency(@app.price) %></h2>
+  <% if number_to_currency(@app.price) == "$0.00" %>
+    <h2>Free!</h2>
+  <% else %>
+    <h2><%= number_to_currency(@app.price) %></h2>
+  <% end %>
 
   <p>
     <strong>Current Version:</strong>
@@ -48,3 +52,8 @@
   <%= render 'comments/comments'%>
   <%= render 'comments/form' %>
 </div>
+
+<script>
+  //reload stars/stop duplication
+  $('.star-rating').raty('reload');
+</script>
