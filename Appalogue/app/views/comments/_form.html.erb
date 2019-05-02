@@ -2,7 +2,6 @@
 <% if current_user %>
 
   <!-- If user has not left a review, show review content -->
-  <h3>Add Review</h3>
   <% @switch = false %>
   <% @app.comments.each do |comment| %>
     <% if current_user.email == comment.username %>
@@ -12,6 +11,7 @@
   <% if @switch == true %>
     <p>You have already left a review!</p>
   <% else %>
+    <h3>Add Review</h3>
     <%= form_for([@app, @app.comments.build]) do |f| %>
 
     <p>
