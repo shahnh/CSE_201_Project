@@ -116,6 +116,7 @@ footer {
 #notice, #alert {
 	font-size: 20px;
 	color: black;
+	list-style-type: none;
 }
 
 #showApp {
