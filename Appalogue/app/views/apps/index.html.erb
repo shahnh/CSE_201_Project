@@ -7,10 +7,10 @@
 
 <!-- For each app in the database, create a new app -->
 <% @apps.each do |app| %>
-	<div class="column">
 
     <!-- If app is approved, show it -->
     <% if app.approved == true %>
+      <div class="column">
   		<div class="app">
   			<h1><%= app.name %></h1>
         <%= image_tag(app.image, alt:"app.name Logo", class: "appImage") if app.image.attached? %>
@@ -30,10 +30,12 @@
         <% end %>
         </p>
       </div>
+      </div>
 
       <!-- Else, if the logged in user is an admin, show it for approval -->
       <% elsif current_user %>
         <% if current_user.admin == true %>
+          <div class="column">
           <div class="unapprovedApp">
             <h1><%= app.name %></h1>
             <%= image_tag(app.image, alt:"app.name Logo", class: "appImage") if app.image.attached? %>
@@ -52,7 +54,7 @@
               <% end %>
             <% end %>
             </p>
-<!--             <p style="font-weight: bold; color: red;">Awaiting approval...</p> -->
+          </div>
           </div>
         <% end %>
       <% end %>
