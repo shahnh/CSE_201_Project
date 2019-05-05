@@ -1,7 +1,12 @@
 <script>
 $(document).ready(function(){
+  $("#myDIV1").toggle();
+  $("#myDIV2").toggle();
   $("#clicker1").click(function(){
-    $("#myDIV").toggle();
+    $("#myDIV1").toggle();
+  });
+  $("#clicker2").click(function(){
+    $("#myDIV2").toggle();
   });
 });
 </script>
@@ -16,22 +21,32 @@ $(document).ready(function(){
 <h3>How do I submit and app?</h3>
 <p>Submitting and app is incredibly simple!!! Click this for a visual walk-through -> <button id="clicker1">Click Me</button>
 
-<div id="myDIV">
+<div id="myDIV1">
   The first step is to go the home page clicking the logo below in the upper left hand corner
-            <%= link_to image_tag(asset_path('icon.png')) %>
+            <%= image_tag(asset_path('icon.png')) %>
             <br>
             <div>The next step is to find the button displayed and circled below and begin creating your app</div>
-            <%= link_to image_tag(asset_path('Help step.png')) %>
+            <%= image_tag(asset_path('Help step.png')) %>
             <div>Whoa!!! You made it this far? Great you're almost there! Okay now all  you need to do is fill in the given information that is shown in the image below and then you will have a working app ready for approval by an admin.  NOTE: Prices must be given only numerical values and you can only submit and app if all the provided fields are given data</div>
-            <%= link_to image_tag(asset_path('Help step.png')) %>
+            <%=  image_tag(asset_path('App Image.png')) %>
 </div> </p>
 <br>
 <h3>How do I search for an app?</h3>
-<p>Want to locate an app that floats your boat? It's incredibly easy to do so with our advanced search algorithm. Click this button for a complete walk through-> <button id="clicker1">Click Me</button>
-	<div id="myDIV">
-		Test
+<p>Want to locate an app that floats your boat? It's incredibly easy to do so with our advanced search algorithm. Click this button for a complete walk through-> <button id="clicker2">Click Me</button>
+
+	<div id="myDIV2">
+		If you haven't noticed yet the search bar is at the top right of the screen on any page on the website
+    <br>
+    <%= image_tag(asset_path('Search Bar.png')) %>
+    <br>
+    <div>Not cutting it for you? Don't fret! On Appalogue we have an option for advanced search which makes it incredibly easy to search for apps. Advanced search can be accessed by click the "Advanced Search" text displayed below in the bottom left hand corner</div>
+    <%= image_tag(asset_path('Advanced Search.png')) %>
+    <br>
+    <div>Once you are on the advanced search page you can now start searching!!! You can search by the app's descrition, the price of the app, or the platform the app is provided on. If you cannot locate the app via advanced search than it does not exist. If you are having problems in this then make sure you contact one of the team members directly</div>
+    <%= image_tag(asset_path('Page.png')) %>
 	</div> </p>
-<p></p>
+
+
 <br>
 <h3>Why is this website so good?</h3>
 <p>We have a competitive hiring process that leaves us with the best people in the buisiness. With everyone on the team holding a PhD from an Ivy League school, it is hard to achieve a product that is anything less than excellent ;)</p>
