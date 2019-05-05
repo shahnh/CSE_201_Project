@@ -3,29 +3,55 @@
 <p><%= link_to 'Back', new_search_path %></p>
 
 <% if @search.search_apps.empty? %>
-
-<p>No apps found. Try a different search!</p>
-
+	<p>No apps found. Try a different search!</p>
 <% else %>
 	<% @search.search_apps.each do |app| %>
-	 <% if app.approved == true %>
-		<div class="column">
-			<div class="app">
-	  			<h1><%= app.name %></h1>
-	        <%= image_tag(app.image, alt:"app.name Logo", class: "appImage") if app.image.attached? %>
-	  			<h3><%= app.price %></h3>
-	  			<h3 style="margin-top: -10px">*review*</h3>
-	  			<p class="appDescription"><%= app.description %></p> <!-- FIX -->
-	        <p style="margin-top: 0px;"><%= link_to '<button type="button" class="infoButton">More Info ></button>'.html_safe, app %>
-	        <% if current_user %>
-	          <% if current_user.admin == true %>
-	            <%= link_to '<button type="button" class="fa fa-pencil otherButton"></button>'.html_safe, edit_app_path(app) %>
-	                <%= link_to '<button type="button" class="fa fa-trash otherButton"></button>'.html_safe, app, method: :delete, data: { confirm: 'Are you sure?'} %>
-	          <% end %>
-	        <% end %>
-	        </p>
-	      </div>
-		</div>
-	<% end %>
+		<% if app.approved == true %>
+			<div class="column">
+  			<div class="app">
+  				<h1><%= app.name %></h1>
+        		<%= image_tag(app.image, alt:"app.name Logo", class: "appImage") if app.image.attached? %>
+        		<% if number_to_currency(app.price) == "$0.00" %>
+          			<h3>Free!</h3>
+        		<% else %>
+          			<h3><%= number_to_currency(app.price) %></h3>
+        		<% end %>
+        		<div class="star-rating" style="margin-top: -15px;" data-score=<%= app.comments.average(:rating) %>></div>
+  				<p class="appDescription"><%= app.description %></p> <!-- FIX -->
+        		<p style="margin-top: 5px;"><%= link_to '<button type="button" class="infoButton">More Info ></button>'.html_safe, app %>
+       			<% if current_user %>
+          			<% if current_user.admin == true %>
+            			<%= link_to '<button type="button" class="fa fa-pencil otherButton"></button>'.html_safe, edit_app_path(app) %>
+                		<%= link_to '<button type="button" class="fa fa-trash otherButton"></button>'.html_safe, app, method: :delete, data: { confirm: 'Are you sure?'} %>
+          			<% end %>
+        		<% end %>
+        		</p>
+      		</div>
+      		</div>
+     	<% elsif current_user %>
+        	<% if current_user.admin == true %>
+        		<div class="column">
+          		<div class="unapprovedApp">
+            		<h1><%= app.name %></h1>
+            		<%= image_tag(app.image, alt:"app.name Logo", class: "appImage") if app.image.attached? %>
+            		<% if number_to_currency(app.price) == "$0.00" %>
+              			<h3>Free!</h3>
+            		<% else %>
+              			<h3><%= number_to_currency(app.price) %></h3>
+            		<% end %>
+            		<div class="star-rating" style="margin-top: -15px;" data-score=<%= app.comments.average(:rating) %>></div>
+            		<p class="appDescription">Awaiting admin approval...</p> <!-- <%= app.description %></p> -->
+            		<p style="margin-top: 5px;"><%= link_to '<button type="button" class="infoButton">More Info ></button>'.html_safe, app %>
+           	 		<% if current_user %>
+              			<% if current_user.admin == true %>
+                			<%= link_to '<button type="button" class="fa fa-check otherButton"></button>'.html_safe, approve_app_path(app), method: :patch, data: { confirm: 'Are you sure?' } %>
+                			<%= link_to '<button type="button" class="fa fa-trash otherButton"></button>'.html_safe, app, method: :delete, data: { confirm: 'Are you sure?' } %>
+              			<% end %>
+            		<% end %>
+            		</p>
+          		</div>
+          		</div>
+			<% end %>
+		<% end %>
 	<% end %>
 <% end %>

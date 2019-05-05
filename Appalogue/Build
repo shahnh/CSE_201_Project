@@ -1,9 +1,20 @@
 #!/bin/bash
+#Build Script for Appalogue
+
+#Install Rails
+gem install rails
+
+#Install the bundler and dependencies
 gem install bundler
 bundle install
+
+#Migrate the database so that it is prepared
 rails db:migrate
-rails s &
-sleep 5
+
+#Start the server
+echo ""
+echo "Navigate to http://localhost:3000"
+echo "Or refresh the browser page that opens"
+echo ""
 open "http://localhost:3000"
-sleep 10
-kill $(jobs -p)
+rails s

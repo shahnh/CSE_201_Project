@@ -2,7 +2,6 @@
 <% if current_user %>
 
   <!-- If user has not left a review, show review content -->
-  <h3>Add Review</h3>
   <% @switch = false %>
   <% @app.comments.each do |comment| %>
     <% if current_user.email == comment.username %>
@@ -12,6 +11,7 @@
   <% if @switch == true %>
     <p>You have already left a review!</p>
   <% else %>
+    <h3>Add Review</h3>
     <%= form_for([@app, @app.comments.build]) do |f| %>
 
     <p>
@@ -21,13 +21,13 @@
 
     <p>
       <%= f.label :rating %><br>
-      <div id="star-rating" style="margin-top: -10px"></div>
+      <div id="star-rating" style="margin-top: -10px" required></div>
 <!--       <%= f.select :rating, options_for_select([1, 2, 3, 4, 5]) %> -->
     </p>
 
     <p>
-      <%= f.label :body %><br>
-      <%= f.text_area(:body) %>
+      <%= f.label :review %><br>
+      <%= f.text_area :body, required: true %>
     </p>
 
     <p>
@@ -46,4 +46,7 @@
     numberMax: 5,
     scoreName: 'comment[rating]'
   });
+
+  //reload stars/stop duplication
+  $('#star-rating').raty('reload');
 </script>

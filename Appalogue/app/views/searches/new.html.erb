@@ -9,13 +9,12 @@
   </div> 
 
   <div class="field">
-    <%= s.label :orgname %><br>
-    <%= s.text_field :orgname %>
+   
   </div>
  
-	<div class="field">
+  <div class="field">
     <%= s.label :price %><br>
-    <%= s.text_field :price %>
+    <%= s.number_field :price, required: true, step: 0.01, min: 0.00 %>
   </div>
 
 	<div class="field">
@@ -26,8 +25,7 @@
 
 
    <div class="field">
-    <%= s.label :version %><br>
-    <%= s.text_field :version %>
+ 
   </div>
 
   <br>
