@@ -1,0 +1,16 @@
+HOW TO SET UP THE RAILS WEBSITE
+===============================
+1. Install Ruby (v2.6.1) - Can be gotten from online
+	- Verify with the command "ruby --version" in command prompt
+2. Install Rails (v2.5.3) - Can be installed via the commmand prompt command "gem install rails"
+	- Verify with the command "rails -v" in command prompt
+3. Navigate to the directory "Appalogue" in the command prompt
+4. Run the command "gem install bundler" in the command prompt to install the bundler gem
+5. Run the command "bundle install" to install all the required gems
+6. Run the command "rails db:migrate" in the command prompt to create the database"
+7. Run the command "rails s" to start the localhost server
+8. Navigate to "localhost:3000" in your preferred browser
+That's it!
+
+-COMMON ISSUES
+1. Cannot find gem bcrypt: Run the command "gem uninstall bcrypt" and then run "gem install bcrypt --platform=ruby"
